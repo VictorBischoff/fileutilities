@@ -10,23 +10,6 @@ import (
 	"github.com/victorbischoff/fileutilities/pkg/entities"
 )
 
-// GetPath gets the directory containing the files which the user whishes to rename
-func GetPath() string {
-	fmt.Println("Please enter path (use ./ for a folder in current directory): ")
-	var path string
-	fmt.Scan(&path)
-
-	return path
-}
-
-// GetPrefix allows the user to enter a prefix which all the files will contain
-func GetPrefix() string {
-	fmt.Println("Please enter prefix: ")
-	var prefix string
-	fmt.Scan(&prefix)
-	return prefix
-}
-
 // RenameFilesInDirectory loops through all the files in the directory and renames them starting with the index number + 1 followed by the useres prefix
 func RenameFilesInDirectory(cleanPath, prefix string) {
 	_, err := os.Stat(cleanPath)
